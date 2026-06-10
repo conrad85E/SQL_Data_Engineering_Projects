@@ -48,13 +48,12 @@ FROM read_csv('https://storage.googleapis.com/sql_de/skills_job_dim.csv')
 ;
 
 SELECT 'Company Dim' AS table_name, COUNT(*) AS record_count FROM company_dim
-UNION
+UNION ALL
 SELECT 'Skills Dim', COUNT(*) FROM skills_dim
-UNION
+UNION ALL
 SELECT 'Job Postings Fact', COUNT(*) FROM job_postings_fact
-UNION
+UNION ALL
 SELECT 'Skills Job Dim', COUNT(*) FROM skills_job_dim;
-
 
 
 SELECT '=== Company Dimension Sample ===' AS info;
