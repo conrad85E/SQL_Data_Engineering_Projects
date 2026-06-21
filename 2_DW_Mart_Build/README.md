@@ -12,7 +12,7 @@ An End-to-end Data Engineering pipeline:
  - CSV files: **Google Cloud Storage**
  - DWH & Data Marts: **DuckDB**
 
-![Project 2 Pipeline](Images\Project2_Data_Warehouse.png)
+![Project 2 Pipeline](../resourses/images/Project2_Data_Warehouse.png)
 
 ---
 
@@ -52,21 +52,21 @@ Raw job posting data arrives as flat CSV files in Google Cloud Storage — not s
 ## 📂 Repository Structure
 ```text
 📦2_DW_Mart_Build
- ┣ 📜01_create_tables_dw.sql
- ┣ 📜02_load_schema_dw.sql
- ┣ 📜03_create_flat_mart.sql
- ┣ 📜04_create_skills_mart.sql
- ┣ 📜05_create_priority_mart.sql
- ┣ 📜06_update_priority_mart.sql
- ┣ 📜build_dw_marts.sql
- ┣ 📜dw_marts.duckdb
- ┗ 📜README.md
+ ┣ 📜01_create_tables_dw.sql      # Star schema DDL
+ ┣ 📜02_load_schema_dw.sql        # GCS data extraction & loading
+ ┣ 📜03_create_flat_mart.sql      # Denormalized flat mart
+ ┣ 📜04_create_skills_mart.sql    # Skills demand mart
+ ┣ 📜05_create_priority_mart.sql  # Priority roles mart
+ ┣ 📜06_update_priority_mart.sql  # Priority mart incremental update (MERGE)
+ ┣ 📜build_dw_marts.sql           # Company hiring mart (optional)
+ ┣ 📜dw_marts.duckdb              # Master SQL build script
+ ┗ 📜README.md                    # You are here
  ```
 
 ---
 
 ## 🏗️ Pipeline Architecture
-![Project 2 Pipeline](Images\Project2_Data_Warehouse.png)
+![Project 2 Pipeline](../resourses/images/Project2_Data_Warehouse.png)
 The pipeline transforms job posting CSVs from Google Cloud Storage into a normalized start schema DWH. Then builds specialized analytical data marts. BI tools (Excel, Power BI, Tableau, Python) consume from both that warehouse and marts.
 
 ---
@@ -74,7 +74,7 @@ The pipeline transforms job posting CSVs from Google Cloud Storage into a normal
 ### Data Warehouse
 
 The DWH implements a star schema with `company_dim`, `skills_dim`, `job_postings_fact` and `skills_job_dim` tables.
-![DWH Schema](Images\1_2_Data_Warehouse.png)
+![DWH Schema](../resourses/images/1_2_Data_Warehouse.png)
 
 - **SQL Files:**
   - [`01_create_tables_dw.sql`](.\01_create_tables_dw.sql) - Defines star schema with 4 core tables.
@@ -86,7 +86,7 @@ The DWH implements a star schema with `company_dim`, `skills_dim`, `job_postings
 
 ### Flat Mart
 Denormalized table with all dimensions for ad-hoc queries.
-![Flat Mart Schema](Images\1_2_Flat_Mart.png)
+![Flat Mart Schema](..\resourses\images\1_2_Flat_Mart.png)
 - **SQL File:** [`03_create_flat_mart.sql`](.\03_create_flat_mart.sql) - Builds denormalized table with all dimensions joined.
 - **Purpose:** Denormalized table for quick ad-hoc queries.
 - **Grain:** One row per job posting with all dimensions joined.
@@ -95,7 +95,7 @@ Denormalized table with all dimensions for ad-hoc queries.
 
 ### Skills Mart
 Time-series skill demand analysis with additive measures.
-![Skills Mart Schema](Images\1_2_Skills_Mart.png)
+![Skills Mart Schema](..\resourses\images\1_2_Skills_Mart.png)
 
 - **SQL File:** [`04_create_skills_mart.sql`](.\04_create_skills_mart.sql) - Builds time-series skill demand mart.
 - **Purpose:** Time-series analysis of skill demand over time with additive measures.
@@ -107,7 +107,7 @@ Time-series skill demand analysis with additive measures.
 ### Priority Mart
 
 Priority role tracking with incremental updates using MERGE operations.
-![Priority Mart Schema](Images\1_2_Priority_Mart.png)
+![Priority Mart Schema](..\resourses\images\1_2_Priority_Mart.png)
 
 - **SQL File:**
   - [`05_create_priority_mart.sql`](.\05_create_priority_mart.sql) - Initial build of priority roles and jobs snapshot.
@@ -120,7 +120,7 @@ Priority role tracking with incremental updates using MERGE operations.
 
 ### Company Mart
 Company hiring trends by role, location, and month.
-![Company Mart Schema](Images\1_2_Company_Mart.png)
+![Company Mart Schema](..\resourses\images\1_2_Company_Mart.png)
 
 - **SQL File:**
   - [`07_create_company_mart.sql`](.\07_create_company_mart.sql) - Builds company hiring trends mart.
