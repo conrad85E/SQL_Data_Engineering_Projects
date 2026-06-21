@@ -12,6 +12,17 @@ An End-to-end Data Engineering pipeline:
  - CSV files: **Google Cloud Storage**
  - DWH & Data Marts: **DuckDB**
 
+#### Access to the DWH
+> The deployed DWH & Marts can be accessed in:
+> 1. **MotherDuck Web UI** by running this command in your MotherDuck notebook:
+> ```sql
+> ATTACH 'md:_share/dw_marts/217de677-7824-4795-a8b8-ee24788567b0';
+> ```
+> 2. Or in your local DuckDB instance by accessing DuckDB CLI and running the above command followed by:
+> ```sql
+> USE data_jobs;
+> ```
+
 ![Project 2 Pipeline](../resourses/images/Project2_Data_Warehouse.png)
 
 ---
