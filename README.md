@@ -24,7 +24,7 @@ The original repo can be found [here](https://github.com/lukebarousse/SQL_Data_E
     Production ETL pipeline from raw CSVs to Star Schema and Data Marts.
 
 ## Detailed overview
-The [Company Mart](2_DW_Mart_Build\07_create_company_mart.sql) from the Project 2 was recreated from its ER-diagram from scratch for learning purposes and the code differs from the [original repo](https://github.com/lukebarousse/SQL_Data_Engineering_Course).
+The [Company Mart](2_DW_Mart_Build/07_create_company_mart.sql) from the Project 2 was recreated from its ER-diagram from scratch for learning purposes and the code differs from the [original repo](https://github.com/lukebarousse/SQL_Data_Engineering_Course).
 
 ## Tools
 - 🐥 **DuckDB:** It's an in-process|SQL|OLAP|Open source Data Warehouse.\

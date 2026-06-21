@@ -77,8 +77,8 @@ The DWH implements a star schema with `company_dim`, `skills_dim`, `job_postings
 ![DWH Schema](../resourses/images/1_2_Data_Warehouse.png)
 
 - **SQL Files:**
-  - [`01_create_tables_dw.sql`](.\01_create_tables_dw.sql) - Defines star schema with 4 core tables.
-  - [`02_load_schema_dw.sql`](.\02_load_schema_dw.sql) - Extracts CSVs from GCS and loads into warehouse tables.
+  - [`01_create_tables_dw.sql`](./01_create_tables_dw.sql) - Defines star schema with 4 core tables.
+  - [`02_load_schema_dw.sql`](./02_load_schema_dw.sql) - Extracts CSVs from GCS and loads into warehouse tables.
 - **Purpose:** Star schema serving as single source of truth for analytical queries.
 - **Grain:** One row per job posting in the fact table (`job_postings_fact`).
 
@@ -86,8 +86,8 @@ The DWH implements a star schema with `company_dim`, `skills_dim`, `job_postings
 
 ### Flat Mart
 Denormalized table with all dimensions for ad-hoc queries.
-![Flat Mart Schema](..\resourses\images\1_2_Flat_Mart.png)
-- **SQL File:** [`03_create_flat_mart.sql`](.\03_create_flat_mart.sql) - Builds denormalized table with all dimensions joined.
+![Flat Mart Schema](../resourses/images/1_2_Flat_Mart.png)
+- **SQL File:** [`03_create_flat_mart.sql`](./03_create_flat_mart.sql) - Builds denormalized table with all dimensions joined.
 - **Purpose:** Denormalized table for quick ad-hoc queries.
 - **Grain:** One row per job posting with all dimensions joined.
 
@@ -95,9 +95,9 @@ Denormalized table with all dimensions for ad-hoc queries.
 
 ### Skills Mart
 Time-series skill demand analysis with additive measures.
-![Skills Mart Schema](..\resourses\images\1_2_Skills_Mart.png)
+![Skills Mart Schema](../resourses/images/1_2_Skills_Mart.png)
 
-- **SQL File:** [`04_create_skills_mart.sql`](.\04_create_skills_mart.sql) - Builds time-series skill demand mart.
+- **SQL File:** [`04_create_skills_mart.sql`](./04_create_skills_mart.sql) - Builds time-series skill demand mart.
 - **Purpose:** Time-series analysis of skill demand over time with additive measures.
 - **Grain:** `skill_id + month_start_date + job_title_short`.
 - **Key Features:** All measures are additive (counts/sums) for safe re-aggregation.
@@ -107,11 +107,11 @@ Time-series skill demand analysis with additive measures.
 ### Priority Mart
 
 Priority role tracking with incremental updates using MERGE operations.
-![Priority Mart Schema](..\resourses\images\1_2_Priority_Mart.png)
+![Priority Mart Schema](../resourses/images/1_2_Priority_Mart.png)
 
 - **SQL File:**
-  - [`05_create_priority_mart.sql`](.\05_create_priority_mart.sql) - Initial build of priority roles and jobs snapshot.
-  - [`06_update_priority_mart.sql`](.\06_update_priority_mart.sql) - Incremental update using **MERGE** (upsert pattern).
+  - [`05_create_priority_mart.sql`](./05_create_priority_mart.sql) - Initial build of priority roles and jobs snapshot.
+  - [`06_update_priority_mart.sql`](./06_update_priority_mart.sql) - Incremental update using **MERGE** (upsert pattern).
 - **Purpose:** Track priority roles and job snapshots with incremental update capabilities.
 - **Grain:** One row per job posting with priority levels assignment.
 - **Key Features:** **MERGE operations for incremental updates** - demonstrates product-ready upsert patterns (INSERT, UPDATE, DELETE in single statement).
@@ -120,10 +120,10 @@ Priority role tracking with incremental updates using MERGE operations.
 
 ### Company Mart
 Company hiring trends by role, location, and month.
-![Company Mart Schema](..\resourses\images\1_2_Company_Mart.png)
+![Company Mart Schema](../resourses/images/1_2_Company_Mart.png)
 
 - **SQL File:**
-  - [`07_create_company_mart.sql`](.\07_create_company_mart.sql) - Builds company hiring trends mart.
+  - [`07_create_company_mart.sql`](./07_create_company_mart.sql) - Builds company hiring trends mart.
 - **Purpose:** Company hiring trends analysis by role, location, and month.
 - **Grain:** `company_id + job_title_short_id + location_id + month_start_date`.
 - **Key Features:** Bridge tables for many-to-many relationships (company-location, job title hierarchies).
