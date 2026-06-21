@@ -31,3 +31,5 @@ The [Company Mart](2_DW_Mart_Build/07_create_company_mart.sql) from the Project 
     The DWH and Data Marts were built using a local instance of **DuckDB**. 
 - 🦆 **MotherDuck:** The cloud DWH built on **DuckDB**.\
     The complete DWH and Data Marts were deployed into **MotherDuck**.
+
+To get access to the deployed DWH & Marts read [this](2_DW_Mart_Build/README.md#access-to-the-dwh).
