@@ -31,7 +31,7 @@ Takeaways:
     As expected SQL and Python lead the list of top in-demand skills
     for Data Engineers.
     As for Cloud services AWS and Azure are the most popular, following right after.
-    The only Big Data tools in the list is Spark.
+    The only Big Data tool in the list is Spark.
     Most popular data pipeline tools (Airflow, Snowflake, Databricks) are also in the list.
     Java and GCP round out the TOP 10 most requested skills.
 ┌────────────┬──────────────┐
