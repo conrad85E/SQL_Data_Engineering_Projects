@@ -5,13 +5,11 @@ TODOs:
 # 🏗️ Data Warehouse & Data Marts:<br> Production ETL Pipeline Build
 ## Overview
 An End-to-end Data Engineering pipeline:
-1. CSV files ->
-2. Normalized Star Schema Data Warehouse (DWH) ->
-3. Analytical Data Marts
+1. CSV files -> 2. Normalized Star Schema Data Warehouse (DWH) -> 3. Analytical Data Marts (DMs)
 
  Tools:
  - CSV files: **Google Cloud Storage**
- - DWH & Data Marts: **DuckDB**
+ - DWH & DMs: **DuckDB**
 
 ### Access to the DWH
 > The deployed DWH & Marts can be accessed in:
