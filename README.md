@@ -5,7 +5,7 @@ TODOs:
 
 # Overview
 ## Contents
-- 🏭 Complete ETL pipeline built in SQL.
+- 🏭 Complete ETL pipeline built in SQL
 - 🔢 Exploratory Data Analysis in SQL
 - _📈 Data Visualization (in progress)_
 
@@ -24,7 +24,8 @@ The original repo can be found [here](https://github.com/lukebarousse/SQL_Data_E
     Production ETL pipeline from raw CSVs to Star Schema and Data Marts.
 
 ## Detailed overview
-The [Company Mart](2_DW_Mart_Build/07_create_company_mart.sql) from the Project 2 was recreated from its ER-diagram from scratch for learning purposes and the code differs from the [original repo](https://github.com/lukebarousse/SQL_Data_Engineering_Course).
+Project 1 and Project 2 were done by following the aforementioned [YouTube Course](https://youtu.be/UjhFbq4uU2Y).\
+Only the Project 2's [Company Mart](2_DW_Mart_Build/07_create_company_mart.sql) was recreated from scratch from its ER-diagram for learning purposes and the code differs from the [original repo](https://github.com/lukebarousse/SQL_Data_Engineering_Course/blob/main/Projects/2_WH_Mart_Build/07_create_company_mart.sql).
 
 ## Tools
 - 🐥 **DuckDB:** It's an in-process|SQL|OLAP|Open source Data Warehouse.\
@@ -32,4 +33,4 @@ The [Company Mart](2_DW_Mart_Build/07_create_company_mart.sql) from the Project 
 - 🦆 **MotherDuck:** The cloud DWH built on **DuckDB**.\
     The complete DWH and Data Marts were deployed into **MotherDuck**.
 
-To get access to the deployed DWH & Marts read [this](2_DW_Mart_Build/README.md#access-to-the-dwh).
+To get access to the DWH & Marts deployed to MotherDuck read [this](2_DW_Mart_Build/README.md#how-to-get-access-to-this-dwh).
