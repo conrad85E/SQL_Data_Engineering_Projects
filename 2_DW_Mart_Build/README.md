@@ -2,7 +2,8 @@
 TODOs:
 -->
 
-# 🏗️ Data Warehouse &<br>🏗️ Data Marts:<br> Production ETL Pipeline Build
+# 🏗️ Data Warehouse & Data Marts:<br> Production ETL Pipeline Build
+## Overview
 An End-to-end Data Engineering pipeline:
 1. CSV files ->
 2. Normalized Star Schema Data Warehouse (DWH) ->
@@ -12,7 +13,7 @@ An End-to-end Data Engineering pipeline:
  - CSV files: **Google Cloud Storage**
  - DWH & Data Marts: **DuckDB**
 
-#### Access to the DWH
+### Access to the DWH
 > The deployed DWH & Marts can be accessed in:
 > 1. **MotherDuck Web UI** by running this command in your MotherDuck notebook:
 > ```sql
